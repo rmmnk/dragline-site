@@ -1,0 +1,37 @@
+# Dragline
+
+> Bitcoin mining and data mining infrastructure for the agent economy.
+> Operates physical Bitcoin mining and builds AI-native data products.
+
+## Company
+
+Dragline is a solo-founded company operating at the intersection of Bitcoin
+mining (physical proof-of-work) and data mining (epistemic proof-of-work).
+The name comes from the dragline excavator — a machine that casts, drags,
+and surfaces valuable material from overburden, operating continuously.
+
+## Products
+
+- [StratumGate](https://dragline.io/products/stratumgate): AI agent knowledge
+  gateway. Structured, verified records for cyber insurance eligibility, CVE
+  exposure, breach notification rules, and claim statistics. REST + MCP.
+  Payment via x402/USDC on Base L2. No API keys or accounts required for agents.
+
+## Interfaces
+
+StratumGate REST: POST /v1/query — natural language query + x402 payment header
+StratumGate MCP: tools — query_knowledge, check_balance, list_domains
+
+## Trust Model
+
+Records are graded: generated → security_scanned → sampled → human_verified.
+Agents may filter by minimum trust level.
+
+## Payment
+
+x402 protocol, USDC on Base L2. Per-query pricing: $0.02–$0.25 depending on
+record type. No subscriptions.
+
+## Contact
+
+paul@dragline.io

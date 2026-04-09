@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Dragline",
+  "url": "https://dragline.io",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://dragline.io/products/stratumgate",
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<Layout
+  title="Dragline — Bitcoin mining + data mining infrastructure"
+  description="Dragline builds foundational infrastructure for the agent economy. Bitcoin mining operations and AI-native data products including StratumGate."
+  jsonLd={jsonLd}
+>
+  <h1>Heavy infrastructure for the agent economy.</h1>
+  <p class="tagline">Cast. Drag. Surface. Repeat.</p>
+
+  <p>
+    Dragline is a Bitcoin mining and data mining company. We operate physical
+    mining infrastructure and build the data pipelines that AI agents depend on
+    — verified knowledge, crypto-native payments, and structured records that
+    don't hallucinate.
+  </p>
+
+  <h2>Products</h2>
+  <p>
+    <a href="/products/stratumgate">StratumGate</a> — An AI agent knowledge gateway.
+    Structured records across cyber insurance, CVE eligibility, and breach notification.
+    Queryable via REST or MCP. Payment per query via x402/USDC.
+  </p>
+
+  <h2>Infrastructure</h2>
+  <p>
+    Bitcoin mining operations running on the Stratum protocol — the same layer
+    StratumGate takes its name from. We work across strata: physical proof-of-work
+    and epistemic proof-of-work.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:paul@dragline.io">paul@dragline.io</a>
+  </p>
+</Layout>
