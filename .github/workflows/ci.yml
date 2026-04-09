@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Minimal permissions — read-only by default
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build + security check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Verify security headers file exists
+        run: |
+          test -f dist/_headers || (echo "ERROR: _headers missing from build output" && exit 1)
+          echo "_headers: OK"
+
+      - name: Verify llms.txt exists
+        run: |
+          test -f dist/llms.txt || (echo "ERROR: llms.txt missing from build output" && exit 1)
+          echo "llms.txt: OK"
+
+      - name: Verify robots.txt exists
+        run: |
+          test -f dist/robots.txt || (echo "ERROR: robots.txt missing from build output" && exit 1)
+          echo "robots.txt: OK"
+
+      - name: Verify CSP header present
+        run: |
+          grep -q "Content-Security-Policy" dist/_headers || (echo "ERROR: CSP missing from _headers" && exit 1)
+          echo "CSP: OK"
+
+      - name: Verify HSTS header present
+        run: |
+          grep -q "Strict-Transport-Security" dist/_headers || (echo "ERROR: HSTS missing from _headers" && exit 1)
+          echo "HSTS: OK"
