@@ -1,0 +1,27 @@
+{
+  "name": "StratumGate",
+  "description": "AI agent knowledge gateway — cyber insurance, CVE eligibility, breach notification",
+  "provider": "Dragline",
+  "provider_url": "https://dragline.io",
+  "mcp_endpoint": "https://dragline.io/products/stratumgate",
+  "tools": [
+    {
+      "name": "query_knowledge",
+      "description": "Query structured knowledge records by natural language. Returns scored, sourced results."
+    },
+    {
+      "name": "check_balance",
+      "description": "Check USDC balance for a wallet address on Base L2."
+    },
+    {
+      "name": "list_domains",
+      "description": "List available knowledge domains (e.g. cyber_insurance, breach_notification)."
+    }
+  ],
+  "payment": {
+    "protocol": "x402",
+    "currency": "USDC",
+    "network": "base",
+    "price_range": "$0.02–$0.25 per query"
+  }
+}

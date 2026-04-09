@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About — Dragline"
+  description="Dragline is a Data Mining infrastructure company building crypto-native transaction rails for the agent economy."
+>
+  <h1>About</h1>
+
+  <p>
+    Dragline is a Data Mining and infrastructure company. We build the pipelines
+    that surface structured, verified knowledge for AI agents — and the
+    crypto-native payment rails that let agents consume it.
+  </p>
+
+  <h2>The Name</h2>
+  <p>
+    A dragline excavator is the largest class of mobile machine ever built. It
+    doesn't dig with a rigid arm — it casts a bucket outward on cables, then
+    drags it back through the earth, filling as it returns. No haul trucks. One
+    machine. Enormous output.
+  </p>
+  <p>
+    That's the model. Cast into raw Data sources. Drag back structured,
+    verified records. One operator, cloud-scale infrastructure, AI agents
+    running the cycles.
+  </p>
+
+  <h2>Stack Philosophy</h2>
+  <p>
+    Database-first. API-first. No OpenAI. Payments via x402/USDC — no
+    subscriptions, no accounts, no keys. Providers are swappable. The Data
+    outlasts the model.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    <a href="mailto:paul@dragline.io">paul@dragline.io</a>
+  </p>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "StratumGate",
+  "url": "https://dragline.io/products/stratumgate",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "description": "AI agent knowledge gateway. Structured records for cyber insurance, CVE eligibility, and breach notification. REST + MCP. x402/USDC payment per query.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0.02",
+    "priceCurrency": "USD",
+    "description": "Per query, paid via x402/USDC on Base L2"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Dragline",
+    "url": "https://dragline.io"
+  }
+};
+---
+
+<Layout
+  title="StratumGate — AI Agent Knowledge Gateway"
+  description="StratumGate serves structured, verified knowledge records to AI agents. Cyber insurance, CVE eligibility, breach notification. REST + MCP. Pay per query via x402/USDC."
+  jsonLd={jsonLd}
+>
+  <h1>StratumGate</h1>
+  <p class="tagline">Verified knowledge for AI agents. No hallucinations. Pay per query.</p>
+
+  <p>
+    AI agents need facts, not search results. StratumGate is a knowledge gateway
+    that serves structured, verified records via REST or MCP — with payment
+    handled automatically via x402/USDC on Base L2.
+  </p>
+
+  <h2>What It Serves</h2>
+  <p>
+    Cyber insurance eligibility based on CVE exposure (CISA KEV + NVD cross-reference).
+    Breach notification requirements by US state statute. Claim statistics from
+    FBI IC3 and HHS OCR. Records are scored, sourced, and trust-graded.
+  </p>
+
+  <h2>How Agents Use It</h2>
+  <p>
+    REST API — <code>POST /v1/query</code> with a natural language query and an
+    x402 payment header. Returns structured JSON with relevance score, source
+    provenance, and trust level.
+  </p>
+  <p>
+    MCP — connect via Claude Desktop or any MCP-compatible agent runtime.
+    Tools: <code>query_knowledge</code>, <code>check_balance</code>, <code>list_domains</code>.
+  </p>
+
+  <h2>Pricing</h2>
+  <p>
+    $0.02–$0.25 per query depending on record type. Paid via USDC on Base L2
+    using the x402 protocol — no API keys, no subscriptions, no accounts.
+    Agents pay per use.
+  </p>
+
+  <h2>Trust Model</h2>
+  <p>
+    Every record carries a trust grade: <code>generated</code> → <code>security_scanned</code>
+    → <code>sampled</code> → <code>human_verified</code>. Agents can filter by minimum
+    trust level. <code>human_verified</code> records have been reviewed by a domain expert.
+  </p>
+
+  <h2>Interfaces</h2>
+  <p>
+    REST: <code>POST /v1/query</code> · <code>GET /health</code> · <code>GET /v1/domains</code>
+    <br />
+    MCP: stdio transport for Claude Desktop · HTTP transport coming.
+  </p>
+</Layout>
